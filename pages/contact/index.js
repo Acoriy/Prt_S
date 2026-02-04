@@ -24,7 +24,7 @@ const Contact = () => {
     emailjs
       .sendForm(
         'service_iyfxaes',
-        'template_69egbqj',
+        ' ',
         form.current,
         {
           publicKey: 'SRPQxvXxB9Ah3Kdw1',
@@ -132,3 +132,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
