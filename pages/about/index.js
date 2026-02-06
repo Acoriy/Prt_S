@@ -49,7 +49,12 @@ const aboutData = [
       },
       {
         title: "Back-end",
-        icons: [<SiPhp key="php" />, <SiMysql key="mysql" />,<FaNodeJs key="nodJs" />,<SiMongodb key="nongoDB" />  ],
+        icons: [
+          <SiPhp key="php" />,
+          <SiMysql key="mysql" />,
+          <FaNodeJs key="nodJs" />,
+          <SiMongodb key="nongoDB" />,
+        ],
       },
       {
         title: "Outher",
@@ -65,14 +70,12 @@ const aboutData = [
   {
     title: "Formations ",
     info: [
-       {
-        title:
-          "UX/UI Design Bootcamp - Orange Digital Center Agadir",
+      {
+        title: "UX/UI Design Bootcamp - Orange Digital Center Agadir",
         stage: "December 2024 - January 2025",
       },
       {
-        title:
-          "Digital Marketing training - Orange Digital Center Agadir",
+        title: "Digital Marketing training - Orange Digital Center Agadir",
         stage: "November 2024 - December 2024",
       },
       {
@@ -197,9 +200,11 @@ import { fadeIn } from "../../variants";
 // counter
 import CountUp from "react-countup";
 
-const phrases = ["I'm Full-Stack Web Developer", "I'm UX/UI Designer" , "I'm Digital Marketer"];
-
-
+const phrases = [
+  "I'm Full-Stack Web Developer",
+  "I'm UX/UI Designer",
+  "I'm Digital Marketer",
+];
 
 const About = () => {
   const [index, setIndex] = useState(0);
@@ -300,15 +305,26 @@ const About = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 xl:z-10"
+              className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 xl:z-10 relative overflow-hidden group cursor-pointer"
             >
-              Passionate about creating intuitive and thoughtful user
-              experiences, I specialize in front-end development using modern
-              technologies. With an eye for design and attention to detail, I
-              transform concepts into dynamic and interactive interfaces. Always
-              keeping in mind the latest trends and innovations, I am committed
-              to providing high-quality web solutions that meet my clients
-              needs.
+              {/* Effet de gradient qui se dévoile */}
+              <motion.span
+                className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: "100%" }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+              />
+
+              {/* Texte avec effet de brillance */}
+              <span className="relative z-10 transition-all duration-500 group-hover:text-white/90">
+                Passionate about creating intuitive and thoughtful user
+                experiences, I specialize in front-end development using modern
+                technologies. With an eye for design and attention to detail, I
+                transform concepts into dynamic and interactive interfaces.
+                Always keeping in mind the latest trends and innovations, I am
+                committed to providing high-quality web solutions that meet my
+                clients needs.
+              </span>
             </motion.p>
             {/* counters  */}
             <motion.div
