@@ -73,7 +73,7 @@ function MyApp({ Component, pageProps }) {
       <div style={{ display: showLoader ? 'none' : 'block' }}>
         <Layout>
           <Head>
-            <link rel='shortcut icon' type='x-icon' href='/MyLogo.png'>
+            <link rel='shortcut icon' type='x-icon' href='/EntetPage.png' >
             </link>
             <title>Sofyane Acoriy | web developer</title>
           </Head>

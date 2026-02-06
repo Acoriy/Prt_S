@@ -199,6 +199,8 @@ import CountUp from "react-countup";
 
 const phrases = ["I'm Full-Stack Web Developer", "I'm UX/UI Designer" , "I'm Digital Marketer"];
 
+
+
 const About = () => {
   const [index, setIndex] = useState(0);
   const [indexAnimate, setIndexAniamte] = useState(0);
