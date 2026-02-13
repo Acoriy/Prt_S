@@ -77,7 +77,7 @@ export const workSlides = {
             },
             {
               title: "ThePlatform - UI Kit E-Learning & Online Class تطبيق منصة ",
-              path: "/Cover- Thumbnail.png",
+              path: "/Cover- Thumbnail1.png",
               link: "https://www.figma.com/design/MKIbno5TOIfWHFojA7SQ2K/ThePlatform---UI-Kit-E-Learning---Online-Class-%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D9%85%D9%86%D8%B5%D8%A9--Community-?node-id=3-16&t=KKPSDIZQvRtsSVFP-1",
               description: "Taqteb Platform App is a comprehensive application consisting of 30 screens for browsing educational courses. It features both light and dark modes and is completely free. This design includes visual identity, icons, and a design system, all crafted with Figma, UI, and UX, along with interactive prototyping.",
             },

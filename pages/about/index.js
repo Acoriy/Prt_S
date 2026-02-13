@@ -210,9 +210,28 @@ const About = () => {
   const [index, setIndex] = useState(0);
   const [indexAnimate, setIndexAniamte] = useState(0);
 
-  // Textes :
-  // const sentence = " I\'m Frontend  developer .";
-  // const letters = Array.from(sentence);
+  // Description assest : 
+const sentences = [
+  "Passionate about creating intuitive and thoughtful user experiences, I specialize in front-end development using modern technologies.",
+  "With an eye for design and attention to detail, I transform concepts into dynamic and interactive interfaces.",
+  "Always keeping in mind the latest trends and innovations, I am committed to providing high-quality web solutions that meet my clients needs."
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
 
   const letters = phrases[indexAnimate].split("");
 
@@ -243,32 +262,7 @@ const About = () => {
         >
           {/* text */}
           <div className="flex-1 flex flex-col justify-center">
-            {/* <motion.h2
-                  initial="hidden"
-                  animate="visible"
-                  variants={{
-                      hidden: { opacity: 1 },
-                      visible: {
-                          opacity: 1,
-                          transition: {
-                              staggerChildren: 0.1,
-                          },
-                      },
-                  }}
-                  className="h2 xl:z-10"
-              >
-                <span className="text-accent">Hi ! </span> 
-                  {letters.map((char, itemIndexText) => (
-                      <motion.span key={itemIndexText}
-                          variants={{
-                              hidden: { opacity: 0 },
-                              visible: { opacity: 1 },
-                          }}
-                      >
-                          {char}
-                      </motion.span>
-                  ))}
-              </motion.h2> */}
+            
 
             <motion.h2
               key={indexAnimate}
@@ -300,32 +294,18 @@ const About = () => {
               ))}
             </motion.h2>
 
-            <motion.p
-              variants={fadeIn("right", 0.4)}
-              initial="hidden"
-              animate="show"
-              exit="hidden"
-              className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 xl:z-10 relative overflow-hidden group cursor-pointer"
-            >
-              {/* Effet de gradient qui se dévoile */}
-              <motion.span
-                className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/20 to-purple-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: "100%" }}
-                transition={{ duration: 1, ease: "easeInOut" }}
-              />
-
-              {/* Texte avec effet de brillance */}
-              <span className="relative z-10 transition-all duration-500 group-hover:text-white/90">
-                Passionate about creating intuitive and thoughtful user
-                experiences, I specialize in front-end development using modern
-                technologies. With an eye for design and attention to detail, I
-                transform concepts into dynamic and interactive interfaces.
-                Always keeping in mind the latest trends and innovations, I am
-                committed to providing high-quality web solutions that meet my
-                clients needs.
-              </span>
-            </motion.p>
+            <motion.div
+    className="relative z-10 group transition-all duration-500 group-hover:text-white/90 pb-4"
+    variants={containerVariants}
+    initial="hidden"
+    animate="visible"
+  >
+    {sentences.map((sentence, index) => (
+      <motion.p key={index} variants={itemVariants} className="my-2 relative z-10 transition-all duration-500 group-hover:text-white/90">
+        {sentence}
+      </motion.p>
+    ))}
+  </motion.div>
             {/* counters  */}
             <motion.div
               variants={fadeIn("right", 0.6)}
